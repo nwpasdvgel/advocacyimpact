@@ -46,21 +46,12 @@
 .story-header img {
 	display: block;
 	width: 100%;
-	height: 360px;
-	max-height: 40vh;
-	object-fit: cover;
-	object-position: center 32%;
+	height: auto;
 	border-radius: 6px;
 }
 
 .story-header figcaption {
 	margin-top: 0.6em;
-}
-
-@media screen and (max-width: 736px) {
-	.story-header img {
-		height: 200px;
-	}
 }
 
 /* ==========================================================================
