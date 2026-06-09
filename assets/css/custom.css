@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Custom styles for Advocacy Impact
+   Kept separate from the html5up template (main.css) so template updates
+   don't clobber site-specific tweaks. Loaded after main.css.
+   ========================================================================== */
+
+/* Reusable "featured figure" — the offset image block used on the home,
+   Contact, and What We Do pages. Replaces a repeated inline style block. */
+.featured-figure {
+	position: relative;
+	width: auto;
+	left: 1.75em;
+	top: 1.75em;
+	margin: -4.5em 0 4.25em -3.5em;
+}
+
+.featured-figure .image.featured {
+	display: block;
+	position: static;
+	left: auto;
+	top: auto;
+	margin: 0;
+}
+
+.featured-figure img {
+	display: block;
+	margin: 0;
+}
+
+/* Italic image captions used throughout the site. */
+.image-caption {
+	font-style: italic;
+	font-size: 0.9em;
+	margin-top: 0;
+	margin-bottom: 0;
+}
