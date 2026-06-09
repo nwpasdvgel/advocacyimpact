@@ -34,3 +34,33 @@
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
+/* ==========================================================================
+   Mobile image fixes
+   Desktop is the priority and is left untouched. At phone widths (<=736px,
+   the template's "small" breakpoint where columns already stack), content
+   images are forced to: never overflow the viewport, drop their float, and
+   fill the column instead of sitting cramped beside the text.
+   !important is required to override the per-image inline styles in the HTML.
+   ========================================================================== */
+@media screen and (max-width: 736px) {
+
+	/* No content image may be wider than the screen (fixes the 480px/530px
+	   pixel-width images on the Engage page that overflowed on phones). */
+	#main img {
+		max-width: 100% !important;
+		height: auto !important;
+	}
+
+	/* Stack figures full-width instead of floating them in a narrow column. */
+	#main figure {
+		float: none !important;
+		width: auto !important;
+		max-width: 100% !important;
+		margin: 0 0 1.5em 0 !important;
+	}
+
+	#main figure img {
+		width: 100% !important;
+	}
+}
