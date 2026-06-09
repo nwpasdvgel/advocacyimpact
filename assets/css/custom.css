@@ -35,6 +35,22 @@
 	margin-bottom: 0;
 }
 
+/* Full-width header/hero image (e.g. the Global Stories page banner). */
+.story-header {
+	margin: 0 0 2.5em 0;
+}
+
+.story-header img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 6px;
+}
+
+.story-header figcaption {
+	margin-top: 0.6em;
+}
+
 /* ==========================================================================
    Mobile image fixes
    Desktop is the priority and is left untouched. At phone widths (<=736px,
