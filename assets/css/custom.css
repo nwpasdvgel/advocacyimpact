@@ -54,6 +54,13 @@
 	margin-top: 0.6em;
 }
 
+/* Remove the dark gap between the header and the home-page banner.
+   The template gives #banner a top margin, which let the dark body
+   background show through as a black strip below the menu. */
+#banner {
+	margin-top: 0;
+}
+
 /* ==========================================================================
    Mobile image fixes
    Desktop is the priority and is left untouched. At phone widths (<=736px,
