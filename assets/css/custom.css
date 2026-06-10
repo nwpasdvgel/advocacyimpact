@@ -89,4 +89,13 @@
 	#main figure img {
 		width: 100% !important;
 	}
+
+	/* Neutralize the desktop "featured-figure" offset (left/top 1.75em) so
+	   stacked images sit flush with the content instead of shifted right and
+	   down. Fixes the top image on the What We Do / How We Work page. */
+	.featured-figure {
+		position: static;
+		left: auto;
+		top: auto;
+	}
 }
