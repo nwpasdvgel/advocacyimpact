@@ -62,6 +62,42 @@
 }
 
 /* ==========================================================================
+   Content figures (Engage / Global Stories)
+   Float an image beside the body text on desktop using percentage widths,
+   so the layout scales with the column instead of the old fixed 480px/530px
+   blocks. The mobile media query below already drops the float and forces
+   full width at <=736px, so these stack cleanly on phones.
+   ========================================================================== */
+.fig-left,
+.fig-right {
+	width: 46%;
+	margin-bottom: 1.5em;
+}
+
+.fig-left {
+	float: left;
+	margin-right: 1.75em;
+}
+
+.fig-right {
+	float: right;
+	margin-left: 1.75em;
+}
+
+.fig-left img,
+.fig-right img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	/* Harmonise all floated card images to one 3:2 frame so they sit at a
+	   uniform height on desktop; cover crops gently from the centre. The
+	   mobile rule below resets this so phones show the full, uncropped photo. */
+	aspect-ratio: 3 / 2;
+	object-fit: cover;
+}
+
+/* ==========================================================================
    Mobile image fixes
    Desktop is the priority and is left untouched. At phone widths (<=736px,
    the template's "small" breakpoint where columns already stack), content
@@ -88,6 +124,7 @@
 
 	#main figure img {
 		width: 100% !important;
+		aspect-ratio: auto !important;
 	}
 
 	/* Neutralize the desktop "featured-figure" offset (left/top 1.75em) so
