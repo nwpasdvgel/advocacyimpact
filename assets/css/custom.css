@@ -136,3 +136,25 @@
 		top: auto;
 	}
 }
+
+/* ==========================================================================
+   Global Stories teaser grid (home page) — align the "Read More" buttons.
+   Cards in a row already share a height (the template's flex .row with
+   align-items: stretch); make each card fill that height and push its
+   footer to the bottom, so the red "Read More" buttons line up across the
+   row regardless of image size or teaser length.
+   ========================================================================== */
+.stories-grid > [class*="col-"] {
+	display: flex;
+	flex-direction: column;
+}
+
+.stories-grid > [class*="col-"] > .box {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.stories-grid > [class*="col-"] > .box > footer {
+	margin-top: auto;
+}
