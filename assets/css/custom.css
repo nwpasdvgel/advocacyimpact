@@ -158,3 +158,17 @@
 .stories-grid > [class*="col-"] > .box > footer {
 	margin-top: auto;
 }
+
+/* ==========================================================================
+   Keep floated figures inside their white box (otherwise a tall image at the
+   end of a box hangs out below it).
+   ========================================================================== */
+#main .box::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.stories-grid > [class*="col-"] > .box::after {
+	content: none;
+}
