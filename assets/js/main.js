@@ -36,7 +36,7 @@
 		// Title Bar.
 			$(
 				'<div id="titleBar">' +
-					'<a href="#navPanel" class="toggle"></a>' +
+					'<a href="#navPanel" class="toggle" aria-label="Menu"></a>' +
 				'</div>'
 			)
 				.appendTo($body);
@@ -51,14 +51,25 @@
 			)
 				.appendTo($body)
 				.panel({
-					delay: 500,
+					delay: 250,
 					hideOnClick: true,
+					hideOnEscape: true,
 					hideOnSwipe: true,
 					resetScroll: true,
 					resetForms: true,
 					side: 'left',
 					target: $body,
 					visibleClass: 'navPanel-visible'
+				});
+
+			// Mark the page you're on in the menu panel (works with or without ".html").
+				var pagePath = function(path) {
+					return path.replace(/\/index(\.html)?$/, '/').replace(/\.html$/, '');
+				};
+
+				$('#navPanel .link').each(function() {
+					if (this.pathname && pagePath(this.pathname) === pagePath(window.location.pathname))
+						$(this).addClass('current');
 				});
 
 })(jQuery);
