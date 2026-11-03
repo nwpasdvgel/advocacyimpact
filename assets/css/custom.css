@@ -86,7 +86,9 @@
 /* The photo is drawn on its own layer so it can be shown about a third
    larger than "just fills the banner" (1.2 x 1.1): the sides are trimmed,
    the framing (UN emblem above the text box, delegates below) stays the
-   same. It uses the full-quality 1800px original. */
+   same. Both copies are made from the 4096px original: 2000px for standard
+   screens, 3200px for high-resolution screens (browsers pick via image-set;
+   older ones fall back to the 2000px copy). */
 #banner::before {
 	content: "";
 	position: absolute;
@@ -94,7 +96,9 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: url("../../images/un-women-ga-hall-banner.jpg") center 15% / cover no-repeat;
+	background: url("../../images/un-women-ga-hall-banner-2000.jpg") center 15% / cover no-repeat;
+	background-image: -webkit-image-set(url("../../images/un-women-ga-hall-banner-2000.jpg") 1x, url("../../images/un-women-ga-hall-banner-3200.jpg") 2x);
+	background-image: image-set(url("../../images/un-women-ga-hall-banner-2000.jpg") 1x, url("../../images/un-women-ga-hall-banner-3200.jpg") 2x);
 	transform: scale(1.32);
 	transform-origin: 50% 15%;
 }
