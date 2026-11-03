@@ -61,6 +61,49 @@
 	margin-top: 0;
 }
 
+/* Home page banner, behind the "Navigating Human Rights Spaces" box.
+   It sits inside the content column (see #banner-wrapper in index.html), on
+   the same grey as the sections below, so its edges line up with them. */
+#banner-wrapper {
+	background: #f7f7f7;
+	padding-top: 2em;
+}
+
+/* About 20% taller than the template's banner. */
+#banner {
+	padding: 10.8em 0;
+	overflow: hidden;
+	border-radius: 6px;
+	background: #CCE8F4;
+}
+
+@media screen and (max-width: 1280px) {
+	#banner {
+		padding: 8.4em 0;
+	}
+}
+
+/* The photo is drawn on its own layer so it can be shown about a third
+   larger than "just fills the banner" (1.2 x 1.1): the sides are trimmed,
+   the framing (UN emblem above the text box, delegates below) stays the
+   same. It uses the full-quality 1800px original. */
+#banner::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: url("../../images/un-women-ga-hall-banner.jpg") center 15% / cover no-repeat;
+	transform: scale(1.32);
+	transform-origin: 50% 15%;
+}
+
+#banner header {
+	position: relative;
+	z-index: 1;
+}
+
 /* ==========================================================================
    Content figures (Engage / Global Stories)
    Float an image beside the body text on desktop using percentage widths,
